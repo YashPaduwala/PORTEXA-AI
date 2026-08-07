@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(135deg,#120e2e,#1b1744,#221d5a);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+/* ================= NAVBAR ================= */
+.container-fluid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-navbar{
+    background: rgba(18,14,46,0.95);
+    backdrop-filter: blur(12px);
+    padding: 15px 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.35);
+}
+
+.logo{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.logo:hover{
+    color: white;
+}
+
+.logo-text{
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.logo-text:hover{
+    text-decoration: none;
+}
+
+.link{
+    color: #7e7af5;
+}
+
+/* ================= BUTTONS ================= */
+
+.login-btn{
+    background: #7e7af5;
+    color: white;
+    border: 2px solid #7e7af5;
+    border-radius: 10px;
+    padding: 8px 22px;
+    transition: .3s;
+}
+
+.login-btn:hover{
+    transform: translateY(-4px);
+    background: #6965dd;
+    border-color: #6965dd;
+    box-shadow: 0 10px 25px rgba(126,122,245,.45);
+}
+
+.signup-btn{
+    background: white;
+    color: #120e2e;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 8px 22px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.signup-btn:hover{
+    background: #6965dd;
+    color: white;
+    border-color: #6965dd;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(126,122,245,.45);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1{
+    font-size: 58px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p{
+    font-size: 20px;
+    color: #d8d8d8;
+    max-width: 750px;
+    margin: auto;
+}
+.gs { 
+  background: linear-gradient(135deg,#120e2e,#1b1744,#221d5a);
+  border-color: white;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-box{
+    max-width: 700px;
+    margin: 50px auto;
+}
+
+.search-box .form-control{
+    height: 55px;
+    border-radius: 12px 0 0 12px;
+    border: none;
+}
+
+.search-box .btn{
+    border-radius: 0 12px 12px 0;
+    background: #7e7af5;
+    border: none;
+}
+
+.search-box .btn:hover{
+    background: #6965dd;
+}
+
+/* ================= FEATURE CARDS ================= */
+
+.feature-card{
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    padding: 30px;
+    transition: .35s;
+    backdrop-filter: blur(10px);
+    height: 100%;
+}
+
+.feature-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(126,122,245,.30);
+    border-color: #7e7af5;
+}
+
+.feature-card h4{
+    color: white;
+    margin-top: 15px;
+}
+
+.feature-card p{
+    color: #cfcfcf;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background: #120e2e;
+    text-align: center;
+    padding: 25px;
+    margin-top: 80px;
+    color: #cfcfcf;
+    border-top: 1px solid rgba(255,255,255,.1);
+}

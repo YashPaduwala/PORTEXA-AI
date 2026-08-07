@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Sign Up</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+  <main class="container min-vh-100 d-flex justify-content-center align-items-center py-4">
+
+    <div class="card signup-card">
+
+      <div class="card-body p-4 p-md-5">
+
+        <h2 class="text-center mb-2">
+          Welcome
+        </h2>
+
+        <p class="text-center text-secondary mb-4">
+          Please sign up to continue
+        </p>
+
+        <form action="#" method="post">
+
+          <!-- First and last name -->
+          <div class="row g-3 mb-3">
+
+            <div class="col-12 col-md-6">
+              <label for="first" class="form-label">
+                First Name
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                name="first"
+                id="first"
+                placeholder="Enter your first name"
+                required
+              >
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label for="last" class="form-label">
+                Last Name
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                name="last"
+                id="last"
+                placeholder="Enter your last name"
+                required
+              >
+            </div>
+
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">
+              Email
+            </label>
+
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            >
+          </div>
+
+          <!-- Phone number -->
+          <div class="mb-3">
+            <label for="phone" class="form-label">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              class="form-control"
+              name="phone"
+              id="phone"
+              maxlength="10"
+              pattern="[0-9]{10}"
+              placeholder="Enter your phone number"
+              required
+            >
+
+            <div class="form-text">
+              Enter a 10-digit phone number.
+            </div>
+          </div>
+
+          <!-- Username -->
+          <div class="mb-3">
+            <label for="username" class="form-label">
+              Username
+            </label>
+
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              id="username"
+              placeholder="Create your username"
+              required
+            >
+          </div>
+
+          <!-- Password -->
+          <div class="mb-4">
+            <label for="password" class="form-label">
+              Password
+            </label>
+
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="password"
+              minlength="6"
+              placeholder="Create your password"
+              required
+            >
+          </div>
+
+          <!-- Signup button -->
+          <button
+            type="submit"
+            class="btn signup-btn w-100"
+            onclick="location.href='Dashboard.html'">
+            Sign Up
+          </button>
+
+          <p class="login-text text-center mt-4 mb-0">
+            Already have an account?
+
+            <a href="login.html">
+              Login
+            </a>
+          </p>
+
+        </form>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

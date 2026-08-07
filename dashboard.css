@@ -1,0 +1,173 @@
+/* =========================== GOOGLE FONT =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================== GLOBAL =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #120e2e, #1b1744, #221d5a);
+    color: white;
+}
+
+
+/* =========================== NAVBAR =========================== */
+.custom-navbar {
+    background: rgba(18, 14, 46, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 15px 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: white;
+}
+
+.link {
+    color: #7e7af5;
+}
+
+.navbar i {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navbar i:hover {
+    color: #7e7af5;
+}
+
+
+/* =========================== HEADING =========================== */
+h2 {
+    font-weight: 700;
+}
+
+p {
+    color: #d4d4d4;
+}
+
+
+/* =========================== DASHBOARD CARDS =========================== */
+.dashboard-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    transition: 0.35s;
+    height: 100%;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-10px);
+    border-color: #7e7af5;
+    box-shadow: 0 20px 40px rgba(126, 122, 245, 0.30);
+}
+
+.dashboard-card i {
+    color: #7e7af5;
+    margin-bottom: 15px;
+}
+
+.dashboard-card h4 {
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    color: #bdbdbd;
+    margin-bottom: 20px;
+}
+
+
+/* =========================== BUTTONS =========================== */
+.btn-primary {
+    background: #7e7af5;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+}
+
+.btn-primary:hover {
+    background: #6965dd;
+}
+
+.btn-primary:focus,
+.btn-primary:active {
+    background: #6965dd !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+/* =========================== TABLE =========================== */
+.table {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.table-dark {
+    --bs-table-bg: rgba(255, 255, 255, 0.05);
+}
+
+.table th {
+    color: #7e7af5;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.table tbody tr {
+    transition: 0.3s;
+}
+
+.table tbody tr:hover {
+    background: rgba(126, 122, 245, 0.15);
+}
+
+
+/* =========================== PROFILE IMAGE =========================== */
+.rounded-circle {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border: 2px solid #7e7af5;
+}
+/* =========================== RESPONSIVE =========================== */
+@media (max-width: 768px) {
+
+    .custom-navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .dashboard-card {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .rounded-circle {
+        width: 40px;
+        height: 40px;
+    }
+}
