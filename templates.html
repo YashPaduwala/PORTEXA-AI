@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates | PORTEXA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="templates.css">
+</head>
+<body data-page="templates">
+    <nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand brand" href="index.html">
+                <img src="logo.png" alt="PORTEXA logo">
+                PORT<span>EXA</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#templateNav" aria-controls="templateNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="templateNav">
+                <div class="navbar-nav ms-auto gap-lg-3">
+                    <a class="nav-link" href="Dashboard.html">Dashboard</a>
+                    <a class="nav-link active" href="templates.html">Templates</a>
+                    <a class="nav-link" href="create.html">Create</a>
+                    <a class="nav-link" href="portfolios.html">Portfolios</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="page-title">
+            <p class="eyebrow">Choose a design</p>
+            <h1>Portfolio Templates</h1>
+            <p>Select a style and continue to the builder.</p>
+        </div>
+
+        <div class="template-grid">
+            <article class="template-card" data-template-card="Modern">
+                <div class="template-preview modern-preview">
+                    <span></span>
+                    <strong>Modern Developer</strong>
+                    <p>Clean layout with strong project sections.</p>
+                </div>
+                <h2>Modern</h2>
+                <p>Best for developers, data analysts and technical portfolios.</p>
+                <button class="btn btn-primary" data-template="Modern">Use Template</button>
+            </article>
+
+            <article class="template-card" data-template-card="Creative">
+                <div class="template-preview creative-preview">
+                    <span></span>
+                    <strong>Creative Profile</strong>
+                    <p>Bold header with expressive content blocks.</p>
+                </div>
+                <h2>Creative</h2>
+                <p>Best for UI/UX, design, marketing and visual work.</p>
+                <button class="btn btn-primary" data-template="Creative">Use Template</button>
+            </article>
+
+            <article class="template-card" data-template-card="Minimal">
+                <div class="template-preview minimal-preview">
+                    <span></span>
+                    <strong>Minimal Resume</strong>
+                    <p>Focused typography and simple sections.</p>
+                </div>
+                <h2>Minimal</h2>
+                <p>Best for clean resumes, academic profiles and internships.</p>
+                <button class="btn btn-primary" data-template="Minimal">Use Template</button>
+            </article>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

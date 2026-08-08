@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | PORTEXA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body data-page="settings">
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand logo d-flex align-items-center" href="Dashboard.html">
+                <img src="logo.png" width="42" height="42" class="me-2" alt="PORTEXA logo">
+                PORT<span class="link">EXA</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#settingsNav" aria-controls="settingsNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="settingsNav">
+                <div class="navbar-nav ms-auto gap-lg-3">
+                    <a class="nav-link" href="Dashboard.html">Dashboard</a>
+                    <a class="nav-link" href="portfolios.html">Portfolios</a>
+                    <a class="nav-link" href="templates.html">Templates</a>
+                    <a class="nav-link active" href="settings.html">Settings</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="settings-card">
+            <p class="eyebrow">Account</p>
+            <h1>Settings</h1>
+            <p>These details are saved in your browser and used as portfolio defaults.</p>
+
+            <form id="settingsForm" class="row g-3 mt-2">
+                <div class="col-md-6">
+                    <label class="form-label" for="settingsName">Display Name</label>
+                    <input class="form-control" id="settingsName" name="name" placeholder="Yash">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="settingsEmail">Email</label>
+                    <input class="form-control" id="settingsEmail" name="email" type="email" placeholder="you@example.com">
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="settingsGoal">Career Goal</label>
+                    <textarea class="form-control" id="settingsGoal" name="goal" rows="4" placeholder="Example: Become a full stack developer."></textarea>
+                </div>
+                <div class="col-12 d-flex gap-2 justify-content-end">
+                    <a class="btn btn-outline-light" href="Dashboard.html">Back</a>
+                    <button class="btn btn-primary" type="submit">Save Settings</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

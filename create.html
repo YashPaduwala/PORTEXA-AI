@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Portfolio | PORTEXA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="builder.css">
+</head>
+<body data-page="create">
+    <nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand brand" href="Dashboard.html">
+                <img src="logo.png" alt="PORTEXA logo">
+                PORT<span>EXA</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#builderNav" aria-controls="builderNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="builderNav">
+                <div class="navbar-nav ms-auto gap-lg-3">
+                    <a class="nav-link" href="Dashboard.html">Dashboard</a>
+                    <a class="nav-link" href="templates.html">Templates</a>
+                    <a class="nav-link" href="portfolios.html">Portfolios</a>
+                    <a class="nav-link" href="settings.html">Settings</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="page-title">
+            <p class="eyebrow">Portfolio builder</p>
+            <h1>Create Your Portfolio</h1>
+            <p>Add your details once, then preview and export your portfolio.</p>
+        </div>
+
+        <form id="portfolioForm" class="builder-grid">
+            <section class="form-panel">
+                <h2>Profile</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label" for="fullName">Full Name</label>
+                        <input class="form-control" id="fullName" name="fullName" placeholder="Yash Sharma" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="role">Profession</label>
+                        <input class="form-control" id="role" name="role" placeholder="Full Stack Developer" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-control" id="email" name="email" type="email" placeholder="you@example.com">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="location">Location</label>
+                        <input class="form-control" id="location" name="location" placeholder="India">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="bio">Professional Bio</label>
+                        <textarea class="form-control" id="bio" name="bio" rows="4" placeholder="Write a short professional introduction."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-panel" id="ai-tools">
+                <div class="panel-heading">
+                    <h2>Skills and Links</h2>
+                    <button class="btn btn-sm btn-outline-light" type="button" id="generateBio">
+                        <i class="bi bi-stars"></i>
+                        Improve Bio
+                    </button>
+                </div>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label" for="skills">Skills</label>
+                        <input class="form-control" id="skills" name="skills" placeholder="React, Python, UI Design, SQL">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="github">GitHub</label>
+                        <input class="form-control" id="github" name="github" placeholder="https://github.com/username">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="linkedin">LinkedIn</label>
+                        <input class="form-control" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="template">Template</label>
+                        <select class="form-select" id="template" name="template">
+                            <option value="Modern">Modern</option>
+                            <option value="Creative">Creative</option>
+                            <option value="Minimal">Minimal</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="accent">Accent Color</label>
+                        <select class="form-select" id="accent" name="accent">
+                            <option value="blue">Blue</option>
+                            <option value="violet">Violet</option>
+                            <option value="teal">Teal</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-panel">
+                <h2>Projects</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label" for="projectOne">Project One</label>
+                        <input class="form-control" id="projectOne" name="projectOne" placeholder="Smart Attendance System">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="projectTwo">Project Two</label>
+                        <input class="form-control" id="projectTwo" name="projectTwo" placeholder="Portfolio Builder">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="projectDetails">Project Details</label>
+                        <textarea class="form-control" id="projectDetails" name="projectDetails" rows="4" placeholder="Describe what you built, technologies used and impact."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-panel">
+                <h2>Education and Experience</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label" for="education">Education</label>
+                        <input class="form-control" id="education" name="education" placeholder="B.Tech Computer Science">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="experience">Experience</label>
+                        <input class="form-control" id="experience" name="experience" placeholder="Internship, freelance or college projects">
+                    </div>
+                    <div class="col-12 actions">
+                        <a class="btn btn-outline-light" href="Dashboard.html">Cancel</a>
+                        <button class="btn btn-primary" type="submit">Save and Preview</button>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

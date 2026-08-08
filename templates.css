@@ -1,0 +1,134 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(circle at 80% 10%, rgba(98, 103, 241, 0.24), transparent 28%),
+        linear-gradient(135deg, #111525, #1b1744 55%, #122f46);
+    color: white;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-navbar {
+    background: rgba(17, 21, 37, 0.94);
+    backdrop-filter: blur(12px);
+    padding: 14px 34px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 27px;
+}
+
+.brand img {
+    width: 42px;
+    height: 42px;
+}
+
+.brand span,
+.eyebrow {
+    color: #8fe3ff;
+}
+
+.page-title {
+    max-width: 760px;
+    margin-bottom: 32px;
+}
+
+.page-title h1 {
+    font-size: clamp(34px, 5vw, 54px);
+    font-weight: 800;
+}
+
+.page-title p,
+.template-card p {
+    color: #d4dce6;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1.4px;
+    font-weight: 800;
+}
+
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.template-card {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 22px;
+    transition: 0.25s;
+}
+
+.template-card:hover {
+    transform: translateY(-6px);
+    border-color: #8fe3ff;
+}
+
+.template-preview {
+    min-height: 220px;
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.template-preview span {
+    width: 66px;
+    height: 66px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.82);
+    margin-bottom: auto;
+}
+
+.template-preview strong {
+    font-size: 22px;
+}
+
+.modern-preview {
+    background: linear-gradient(135deg, #07a6c2, #111525);
+}
+
+.creative-preview {
+    background: linear-gradient(135deg, #6267f1, #e05f8c);
+}
+
+.minimal-preview {
+    background: linear-gradient(135deg, #f7fbff, #dce8ef);
+    color: #111525;
+}
+
+.minimal-preview p {
+    color: #394357;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #6267f1, #07a6c2);
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-weight: 800;
+}
+
+@media (max-width: 576px) {
+    .app-navbar {
+        padding: 12px 16px;
+    }
+}

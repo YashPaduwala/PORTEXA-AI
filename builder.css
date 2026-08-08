@@ -1,0 +1,225 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(circle at top left, rgba(7, 166, 194, 0.24), transparent 28%),
+        linear-gradient(135deg, #111525, #1b1744 55%, #122f46);
+    color: white;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-navbar {
+    background: rgba(17, 21, 37, 0.94);
+    backdrop-filter: blur(12px);
+    padding: 14px 34px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 27px;
+}
+
+.brand img {
+    width: 42px;
+    height: 42px;
+}
+
+.brand span,
+.eyebrow {
+    color: #8fe3ff;
+}
+
+.page-title {
+    max-width: 760px;
+    margin-bottom: 32px;
+}
+
+.page-title h1 {
+    font-size: clamp(34px, 5vw, 54px);
+    font-weight: 800;
+}
+
+.page-title p,
+.form-panel p {
+    color: #d4dce6;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1.4px;
+    font-weight: 800;
+}
+
+.builder-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-panel {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.form-panel h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: center;
+}
+
+.form-label {
+    color: #eef6fb;
+    font-weight: 700;
+}
+
+.form-control,
+.form-select {
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #8fe3ff;
+    box-shadow: 0 0 0 0.2rem rgba(143, 227, 255, 0.18);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #6267f1, #07a6c2);
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-weight: 800;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #5357df, #078ba4);
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.portfolio-preview {
+    max-width: 980px;
+    margin: 0 auto;
+    background: #ffffff;
+    color: #182033;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+.preview-header {
+    background: linear-gradient(135deg, #111525, #07a6c2);
+    color: white;
+    padding: 44px;
+}
+
+.preview-header h1 {
+    font-size: clamp(34px, 6vw, 58px);
+    font-weight: 800;
+    margin: 0;
+}
+
+.preview-header p {
+    color: #e7f6fb;
+    margin: 10px 0 0;
+}
+
+.preview-body {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 28px;
+    padding: 36px;
+}
+
+.preview-section {
+    margin-bottom: 28px;
+}
+
+.preview-section h2 {
+    font-size: 18px;
+    color: #078ba4;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.preview-section p {
+    color: #394357;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chips span {
+    background: #eef9ff;
+    color: #078ba4;
+    border-radius: 999px;
+    padding: 7px 11px;
+    font-weight: 700;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 70px 24px;
+}
+
+@media (max-width: 860px) {
+    .builder-grid,
+    .preview-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .app-navbar {
+        padding: 12px 16px;
+    }
+
+    .actions,
+    .panel-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .portfolio-preview {
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
