@@ -1,6 +1,6 @@
 # PORTEXA-AI
 
-https://yashpaduwala.github.io/PORTEXA-AI/
+
 
 # PORTEXA AI Portfolio Generator
 
