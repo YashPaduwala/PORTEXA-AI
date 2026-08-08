@@ -289,12 +289,20 @@ footer {
     }
 
     .search-box .input-group {
-        display: grid;
+        display: flex;
+        flex-wrap: nowrap;
     }
 
-    .search-box .form-control,
+    .search-box .form-control{
+        width: 1%;
+        flex: 1 1 auto;
+        min-width: 0;
+        border-radius: 12px 0 0 12px;
+    }
     .search-box .btn {
-        width: 100%;
-        border-radius: 12px;
+        width: auto;
+        flex-shrink: 0;
+        border-radius: 0 12px 12px 0;
+        border-radius: 0 14px;
     }
 }
