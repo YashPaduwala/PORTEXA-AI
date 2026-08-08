@@ -126,7 +126,10 @@ body {
     padding: 10px 18px;
     font-weight: 800;
 }
-
+.template-preview .template-logo {
+    background: transparent;
+    border: none;
+}
 @media (max-width: 576px) {
     .app-navbar {
         padding: 12px 16px;
