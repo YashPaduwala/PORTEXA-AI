@@ -63,7 +63,6 @@ body{
 .login-btn:hover{
     transform: translateY(-4px);
     background: #6965dd;
-    border-color: #6965dd;
     box-shadow: 0 10px 25px rgba(126,122,245,.45);
 }
 
@@ -78,9 +77,8 @@ body{
 }
 
 .signup-btn:hover{
-    background: #6965dd;
-    color: white;
-    border-color: #6965dd;
+    background: white;
+    color: #120e2e;
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(126,122,245,.45);
 }
