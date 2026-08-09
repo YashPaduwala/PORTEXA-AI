@@ -47,15 +47,104 @@ function formToObject(form) {
 }
 
 function initAuthForms() {
+
     document.querySelectorAll("[data-auth-form]").forEach((form) => {
-        form.addEventListener("submit", (event) => {
+
+        form.addEventListener("submit", async (event) => {
+
             event.preventDefault();
+
             const data = formToObject(form);
-            const username = data.username || document.getElementById("username")?.value || "Yash";
-            writeJson(STORAGE_KEYS.user, { username, signedInAt: new Date().toISOString() });
-            window.location.href = "Dashboard.html";
+
+            // ==========================================
+            // LOGIN
+            // ==========================================
+
+            if (form.dataset.authForm === "login") {
+
+                try {
+
+                    const response = await fetch(
+                        "http://localhost:5000/api/auth/login",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+
+                            body: JSON.stringify({
+                                email: data.email,
+                                password: data.password
+                            })
+                        }
+                    );
+
+                    const result = await response.json();
+
+                    console.log("LOGIN RESPONSE:", result);
+
+
+                    // Check if login failed
+                    if (!response.ok) {
+
+                        alert(
+                            result.message ||
+                            "Login failed"
+                        );
+
+                        return;
+                    }
+
+
+                    // ==========================================
+                    // SAVE JWT TOKEN
+                    // ==========================================
+
+                    localStorage.setItem(
+                        "token",
+                        result.token
+                    );
+
+
+                    // Save user information
+                    writeJson(
+                        STORAGE_KEYS.user,
+                        {
+                            email: data.email,
+                            signedInAt:
+                                new Date().toISOString()
+                        }
+                    );
+
+
+                    // ==========================================
+                    // GO TO DASHBOARD
+                    // ==========================================
+
+                    window.location.href =
+                        "Dashboard.html";
+
+
+                } catch (error) {
+
+                    console.error(
+                        "LOGIN ERROR:",
+                        error
+                    );
+
+                    alert(
+                        "Unable to connect to the backend."
+                    );
+
+                }
+
+            }
+
         });
+
     });
+
 }
 
 function initCreatePage() {

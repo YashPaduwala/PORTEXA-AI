@@ -1,45 +1,157 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | PORTEXA</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="login.css">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login - PortfoliAI</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Your Login CSS -->
+    <link
+        rel="stylesheet"
+        href="login.css"
+    >
+
 </head>
+
+
 <body>
-    <main class="container-fluid min-vh-100 d-flex justify-content-center align-items-center px-3">
-        <div class="auth-shell">
-            <a class="brand" href="index.html">
-                <img src="logo.png" alt="PORTEXA logo">
-                <span>PORT<span>EXA</span></span>
-            </a>
 
-            <form class="login-box p-4 p-md-5" data-auth-form="login">
-                <div class="text-center mb-4">
-                    <h1>Welcome Back</h1>
-                    <p class="text-secondary mb-0">Sign in to continue building.</p>
+    <main class="min-vh-100 d-flex align-items-center justify-content-center">
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-12 col-md-8 col-lg-5">
+
+
+                    <!-- LOGIN FORM -->
+
+                    <form
+                        class="login-box p-4 p-md-5"
+                        data-auth-form="login"
+                    >
+
+                        <!-- Heading -->
+
+                        <div class="text-center mb-4">
+
+                            <h1>
+                                Welcome Back
+                            </h1>
+
+                            <p class="text-secondary mb-0">
+                                Sign in to continue building.
+                            </p>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="email"
+                                class="form-label fw-semibold"
+                            >
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control form-control-lg"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="mb-4">
+
+                            <label
+                                for="password"
+                                class="form-label fw-semibold"
+                            >
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                class="form-control form-control-lg"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- LOGIN BUTTON -->
+
+                        <button
+                            type="submit"
+                            class="btn login-btn btn-lg w-100"
+                        >
+                            Login
+                        </button>
+
+
+                        <!-- SIGN UP -->
+
+                        <div class="text-center mt-4">
+
+                            <a
+                                href="signup.html"
+                                class="signup-link"
+                            >
+                                Don't have an account?
+                                <strong>Sign Up</strong>
+                            </a>
+
+                        </div>
+
+                    </form>
+
                 </div>
 
-                <div class="mb-3">
-                    <label for="username" class="form-label fw-semibold">Username</label>
-                    <input type="text" class="form-control form-control-lg" id="username" placeholder="Enter your username" required>
-                </div>
+            </div>
 
-                <div class="mb-4">
-                    <label for="password" class="form-label fw-semibold">Password</label>
-                    <input type="password" class="form-control form-control-lg" id="password" placeholder="Enter your password" required>
-                </div>
-
-                <button type="submit" class="btn login-btn btn-lg w-100">Login</button>
-
-                <div class="text-center mt-4">
-                    <a href="signup.html" class="signup-link">Don't have an account? <strong>Sign Up</strong></a>
-                </div>
-            </form>
         </div>
+
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- Your JavaScript -->
+
     <script src="app.js"></script>
+
 </body>
+
 </html>
