@@ -21,7 +21,7 @@ body {
 .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
     color: white;
     text-decoration: none;
     font-weight: 800;
@@ -138,6 +138,36 @@ body {
     padding: 44px;
 }
 
+.three-d-header {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 78% 0%, #34556c, transparent 48%), #11151f;
+}
+
+.preview-orb {
+    position: absolute;
+    z-index: -1;
+    width: 210px;
+    height: 210px;
+    top: 20px;
+    right: 9%;
+    border-radius: 42%;
+    background: linear-gradient(145deg, #8de9d3, #637ecb 58%, #262d62);
+    box-shadow: inset -18px -20px 35px #101526, inset 12px 14px 28px #e1fff755, 0 40px 65px #0008;
+    transform: rotate(-25deg) perspective(500px) rotateY(-25deg);
+}
+
+.portfolio-preview {
+    border-radius: 20px;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
+}
+
+.project-card,
+.info-card {
+    box-shadow: 0 12px 28px rgba(10, 16, 32, 0.12);
+}
+
 .preview-header h1 {
     font-size: clamp(34px, 6vw, 58px);
     font-weight: 800;
@@ -195,6 +225,10 @@ body {
     .preview-body {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 576px) {
+    .preview-orb { width: 120px; height: 120px; right: 5%; top: 14px; }
 }
 
 @media (max-width: 576px) {

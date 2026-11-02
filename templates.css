@@ -21,7 +21,7 @@ body {
 .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
     color: white;
     text-decoration: none;
     font-weight: 800;
