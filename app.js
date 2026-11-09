@@ -5,7 +5,7 @@
     settings: "portexaSettings",
     template: "portexaSelectedTemplate"
 };
-const API_URL = "http://localhost:8000";
+const API_URL = "https://portexa-api-production-d0c2.up.railway.app";
 
 function readJson(key, fallback) {
     try {
