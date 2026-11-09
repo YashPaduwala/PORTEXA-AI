@@ -409,7 +409,10 @@ async function renderPortfolioLists() {
     document.querySelectorAll("[data-open-portfolio]").forEach((link) => {
         link.addEventListener("click", () => {
             const selected = portfolios.find((item) => item.id === decodeURIComponent(link.dataset.openPortfolio));
-            if (selected) writeJson(STORAGE_KEYS.current, selected);
+            if (selected) {
+                writeJson(STORAGE_KEYS.current, selected);
+                localStorage.setItem(STORAGE_KEYS.template, selected.apiPortfolio?.theme || selected.template || "3d-minimal");
+            }
         });
     });
     document.querySelectorAll("[data-delete-portfolio]").forEach((button) => {
