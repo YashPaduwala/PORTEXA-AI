@@ -119,6 +119,37 @@ body {
     color: #394357;
 }
 
+.orbit-preview {
+    background: #f5f5f2;
+    color: #111;
+    border: 1px solid #ddd;
+}
+
+.orbit-preview .orbit-card {
+    width: 86px;
+    height: 110px;
+    border-radius: 10px;
+    padding: 12px;
+    background: #111;
+    color: #fff;
+    font-weight: 800;
+    box-shadow: 7px 10px 18px #0003;
+    transform: rotateY(-18deg) rotateZ(-5deg);
+}
+
+.orbit-preview .orbit-card span {
+    display: inline;
+    width: auto;
+    height: auto;
+    margin: 0;
+    background: none;
+    color: #999;
+}
+
+.orbit-preview p {
+    color: #666;
+}
+
 .btn-primary {
     background: linear-gradient(135deg, #6267f1, #07a6c2);
     border: 0;

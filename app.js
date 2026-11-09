@@ -154,7 +154,7 @@ function initCreatePage() {
         ...current,
         fullName: current.fullName || settings.name || "",
         email: current.email || settings.email || "",
-        template: selectedTemplate || current.template || "3d-minimal"
+        template: selectedTemplate || current.template || current.apiPortfolio?.theme || "3d-minimal"
     };
 
     Object.entries(defaults).forEach(([key, value]) => {
@@ -179,7 +179,7 @@ function initCreatePage() {
             skills: (formData.skills || "").split(",").map((item) => item.trim()).filter(Boolean),
             projects, education: formData.education ? [formData.education] : [],
             experience: formData.experience ? [formData.experience] : [],
-            github: formData.github || null, linkedin: formData.linkedin || null, theme: "3d-minimal"
+            github: formData.github || null, linkedin: formData.linkedin || null, theme: formData.template || "3d-minimal"
         };
         try {
             const token = localStorage.getItem("token");
@@ -259,6 +259,13 @@ function renderPreview() {
         publicViewButton.hidden = false;
     }
 
+    const selectedTheme = data.apiPortfolio?.theme || data.template || data.theme || "3d-minimal";
+    if (selectedTheme === "mono-orbit") {
+        renderMonoOrbitPreview(target, data);
+        return;
+    }
+
+    target.classList.remove("mono-orbit-preview");
     const skills = (data.skills || "").split(",").map((skill) => skill.trim()).filter(Boolean);
     const projects = [data.projectOne, data.projectTwo].filter(Boolean);
     const links = [linkify(data.github, "GitHub"), linkify(data.linkedin, "LinkedIn")].filter(Boolean);
@@ -304,6 +311,27 @@ function renderPreview() {
     `;
 }
 
+function renderMonoOrbitPreview(target, data) {
+    const skills = (data.skills || "").split(",").map((item) => item.trim()).filter(Boolean);
+    const projects = [data.projectOne, data.projectTwo].filter(Boolean);
+    const initials = (data.fullName || "YP").split(/\s+/).slice(0, 2).map((item) => item[0]).join("").toUpperCase();
+    const social = [linkify(data.github, "GitHub"), linkify(data.linkedin, "LinkedIn")].filter(Boolean).join("");
+    const ticker = skills.length ? '<div class="orbit-ticker">' + escapeHTML(skills.join("　✦　")) + '　✦　' + escapeHTML(skills.join("　✦　")) + '</div>' : "";
+    const skillCards = skills.map((skill, index) => '<article><small>' + String(index + 1).padStart(2, "0") + '</small><h3>' + escapeHTML(skill) + '</h3></article>').join("");
+    const projectCards = projects.map((project, index) => '<article><small>' + String(index + 1).padStart(2, "0") + '</small><div><h3>' + escapeHTML(project) + '</h3><p>' + escapeHTML(data.projectDetails || "Project details") + '</p><b>' + escapeHTML(skills.join("　") || "Portfolio project") + '</b></div></article>').join("");
+    target.classList.add("mono-orbit-preview");
+    target.innerHTML = '<div class="orbit-site">' +
+        '<header class="orbit-nav"><a class="orbit-brand" href="#orbit-top">' + escapeHTML(data.fullName || "Your Name") + '<span>.</span></a><nav><a href="#orbit-about">About</a><a href="#orbit-skills">Skills</a><a href="#orbit-projects">Projects</a><a href="#orbit-contact">Contact</a></nav><a class="orbit-talk" href="#orbit-contact">Let\'s talk ↗</a></header>' +
+        '<section class="orbit-hero" id="orbit-top"><div class="orbit-copy"><p class="orbit-eyebrow">● PORTFOLIO / ' + escapeHTML(data.role || "PROFESSIONAL") + '</p><h1>' + escapeHTML(data.fullName || "Your Name") + '</h1><p class="orbit-role">' + escapeHTML(data.role || "Your Profession") + '</p><p class="orbit-bio">' + escapeHTML(data.bio || "Add a short introduction in your portfolio details.") + '</p><div class="orbit-actions"><a class="orbit-btn orbit-dark" href="#orbit-projects">Explore work ↓</a>' + (data.email ? '<a class="orbit-btn orbit-light" href="mailto:' + escapeHTML(data.email) + '">Contact ↗</a>' : "") + '</div><p class="orbit-meta">' + escapeHTML(data.location || "") + (data.location ? '　•　' : "") + 'Portfolio</p></div>' +
+        '<div class="orbit-visual"><i class="orbit-ring orbit-ring-one"></i><i class="orbit-ring orbit-ring-two"></i><article class="orbit-profile"><div class="orbit-profile-top"><span>PROFILE_01</span><span>PORTEXA</span></div><div class="orbit-monogram">' + escapeHTML(initials) + '</div><div class="orbit-profile-bottom"><b>' + escapeHTML(data.fullName || "Your Name") + '<small>' + escapeHTML(data.role || "PROFESSIONAL") + '</small></b><code>01<br>10<br>01</code></div></article><span class="orbit-chip orbit-chip-one">&lt;/&gt; ' + escapeHTML(skills.slice(0, 3).join(" · ") || "Your skills") + '</span><span class="orbit-chip orbit-chip-two">✦ ' + escapeHTML(data.location || "Open to opportunities") + '</span></div></section>' + ticker +
+        (data.bio ? '<section class="orbit-section orbit-split" id="orbit-about"><span class="orbit-label">01 / ABOUT</span><div><h2>Curious by default.<br><span>Builder by choice.</span></h2><p>' + escapeHTML(data.bio) + '</p></div></section>' : "") +
+        (skills.length ? '<section class="orbit-section" id="orbit-skills"><span class="orbit-label">02 / SKILLS</span><h2>Tools I use to<br><span>make ideas real.</span></h2><div class="orbit-skills">' + skillCards + '</div></section>' : "") +
+        (projects.length ? '<section class="orbit-section orbit-dark-section" id="orbit-projects"><span class="orbit-label">03 / SELECTED WORK</span><h2>A few things<br><span>I\'ve built.</span></h2><div class="orbit-projects">' + projectCards + '</div></section>' : "") +
+        ((data.education || data.experience) ? '<section class="orbit-section orbit-split"><span class="orbit-label">04 / JOURNEY</span><div><h2>Learning and<br><span>growing.</span></h2>' + (data.education ? '<p><b>Education</b><br>' + escapeHTML(data.education) + '</p>' : "") + (data.experience ? '<p><b>Experience</b><br>' + escapeHTML(data.experience) + '</p>' : "") + '</div></section>' : "") +
+        '<section class="orbit-contact" id="orbit-contact"><p class="orbit-eyebrow">LET\'S CONNECT</p><h2>Have an idea?<br><em>Let\'s build it.</em></h2>' + (data.email ? '<a class="orbit-email" href="mailto:' + escapeHTML(data.email) + '">' + escapeHTML(data.email) + ' ↗</a>' : "") + '<div class="orbit-socials">' + social + '</div></section>' +
+        '<footer class="orbit-footer"><span>© ' + escapeHTML(data.fullName || "Your Name") + '</span><span>Designed with curiosity.</span><a href="#orbit-top">Back to top ↑</a></footer></div>';
+}
+
 async function renderPortfolioLists() {
     const recent = document.getElementById("recentPortfolios");
     const list = document.getElementById("portfolioList");
@@ -330,7 +358,7 @@ async function renderPortfolioLists() {
                     experience: record.content.experience.join(", "),
                     github: record.content.github || "",
                     linkedin: record.content.linkedin || "",
-                    template: "3D Minimal",
+                    template: record.theme === "mono-orbit" ? "Mono Orbit" : "3D Minimal",
                     updatedAt: record.updated_at
                 }));
                 writeJson(STORAGE_KEYS.portfolios, portfolios);
@@ -363,7 +391,7 @@ async function renderPortfolioLists() {
         } else {
             list.innerHTML = portfolios.map((item) => `
                 <article class="portfolio-item">
-                    <p class="eyebrow">3D Minimal</p>
+                    <p class="eyebrow">${escapeHTML(item.template || "3D Minimal")}</p>
                     <h2>${escapeHTML(item.fullName || "Untitled")}</h2>
                     <p>${escapeHTML(item.role || "Portfolio")}</p>
                     <div class="portfolio-actions">
